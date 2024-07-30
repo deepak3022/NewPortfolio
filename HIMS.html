@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HIMS Report</title>
+    <link rel="stylesheet" href="./hims.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <form action="" class="HIMS">
+      <fieldset class="container">
+        <legend>HIMS Reports</legend>
+        <div class="filters">
+          <div>
+            <label for="from-date">From Date:</label>
+            <input class="from-date" type="date" id="from-date" />
+            <label for="from-date-bs">BS:</label>
+            <input class="from-date-bs" type="date" id="from-date-bs" />
+          </div>
+          <div>
+            <label for="to-date">To Date:</label>
+            <input class="to-date" type="date" id="to-date" />
+            <label for="to-date-bs">BS:</label>
+            <input class="to-date-bs" type="date" id="to-date-bs" />
+          </div>
+          <div>
+            <label for="age-group">Age:</label>
+            <select name="age" id="age-group">
+              <option value="#">HMIS</option>
+              <option value="first">0-6 Months</option>
+              <option value="second">7-11 Months</option>
+              <option value="third">1-6 Years</option>
+            </select>
+          </div>
+          <div>
+            <input
+              type="button"
+              name="upload-btn"
+              id="upload-btn"
+              value="Upload"
+            />
+          </div>
+          <div>
+            <input type="button" value="HMIS Reports" />
+            <select name="register" id="register">
+              <option value="#">HMIS Registers</option>
+            </select>
+          </div>
+        </div>
+        <div class="services-reports">
+          <div class="services">
+            <ul>
+              <li class="collapsible">
+                Summary of Services
+                <ul class="nested">
+                  <li id="hos-ser">Hospital Services</li>
+                  <li>Emergency Services</li>
+                  <li>Diagnostic/Other Services</li>
+                  <li>Free Service for Impoverished Citizen</li>
+                </ul>
+              </li>
+              <li class="collapsible">
+                Summary of Indoor Services
+                <ul class="nested">
+                  <li>Inpatient Outcome</li>
+                  <li>Neonate Form</li>
+                  <li>Maternal Age</li>
+                  <li>Medico-Legal Cases</li>
+                  <li>Type of Surgeries</li>
+                  <li>Death Information</li>
+                  <li>Free Heath service summary</li>
+                  <li>Social Security Programme</li>
+                  <li>Inpatient Morbidity</li>
+                  <li>Hospital Mortality</li>
+                </ul>
+              </li>
+              <li>Safe Motherhood Programme</li>
+              <li>Family Planning Programme</li>
+            </ul>
+          </div>
+
+          <div class="report-table" id="age-group-report">
+            <table id="age-group">
+              <thead>
+                <tr>
+                  <th>Age Group</th>
+                  <th>Recovered/Cured Female</th>
+                  <th>Recovered/Cured Male</th>
+                  <th>Stable Female</th>
+                  <th>Stable Male</th>
+                  <th>Referred Out Female</th>
+                  <th>Referred Out Male</th>
+                  <th>DOPR/LAMA Female</th>
+                  <th>DOPR/LAMA Male</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>0-7 days</td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>0</td>
+                </tr>
+                <!-- More rows as needed -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="left-footer">
+          <div class="refresh-btn">
+            <input type="button" value="Refresh" />
+          </div>
+          <div class="export-btn">
+            <input type="button" value="Export" />
+          </div>
+        </div>
+      </fieldset>
+    </form>
+
+    <script>
+      document.querySelectorAll(".collapsible").forEach((item) => {
+        item.addEventListener("click", () => {
+          item.classList.toggle("active");
+        });
+      });
+    </script>
+  </body>
+</html>

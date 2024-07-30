@@ -1,0 +1,26 @@
+body {
+  background: blue;
+}
+div {
+  text-align: center;
+  background: red;
+  color: white;
+  margin: auto;
+}
+body {
+  margin: 0;
+}
+div h1 {
+  width: 10rem;
+  height: 5rem;
+  margin: auto;
+  padding: 2rem;
+}
+
+h1:hover {
+  font-size: 3rem;
+  color: green;
+  background: orange;
+  cursor: pointer;
+  transition: all 0.6s;
+}

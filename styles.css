@@ -1,0 +1,355 @@
+:root {
+  --orange-red: orangered;
+  --dark-mode: rgb(77, 47, 47);
+
+  --body-bg: rgba(133, 237, 247, 0.651);
+  --text-color: var(--dark-mode);
+
+  --border-color: white;
+
+  --dark-bg: var(--dark-mode);
+  --dark-text-color: white;
+
+  --shadow: 4px -2px 40px 9px rgb(128, 128, 128, 0.465);
+}
+.container {
+  width: 80%;
+  margin: auto;
+  max-width: 1400px;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+
+.flex {
+  display: flex;
+  gap: 1rem;
+}
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.wrapper {
+  background-color: var(--body-bg);
+  min-height: 100vh;
+}
+.title {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.title span {
+  border-bottom: 3px solid var(--orange-red);
+}
+
+/* .montserrat {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+} */
+
+/* nav bar section  */
+header {
+  background-color: var(--skyblue-color);
+  position: static;
+  top: 0;
+  box-shadow: var(--shadow);
+}
+header .header {
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+.logo {
+  color: black;
+  position: relative;
+  font-size: 20px;
+}
+.logo :first-child {
+  font-family: monospace, sans-serif;
+  font-weight: 600;
+  margin-right: 1rem;
+}
+.line::before {
+  content: "";
+  background: var(--orange-red);
+  width: 4px;
+  height: 100%;
+  position: absolute;
+  left: 55%;
+}
+.navigation {
+  list-style: none;
+  font-weight: bold;
+}
+.navigation li:hover {
+  background-color: var(--orange-red);
+  transition: all 0.4s;
+}
+
+.menu ul {
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* dark mode toggler */
+[for="darkMode"] {
+  position: fixed;
+  top: 7rem;
+  left: 3rem;
+}
+[for="darkMode"]:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: all 0.4s;
+}
+
+#darkMode:checked + .wrapper {
+  /* zoom: 2; */
+  --body-bg: var(--dark-bg);
+  color: var(--dark-text-color);
+  --border-color: var(--dark-mode);
+}
+#darkMode {
+  display: none;
+}
+
+/* hero section css starting */
+.hero-section {
+  margin-top: 5rem;
+  max-height: 60vh;
+}
+.hero {
+  background: var(--orange-red);
+  grid-template-areas: "left right";
+  padding: 2rem;
+  box-shadow: var(--shadow);
+}
+.left {
+  grid-area: left;
+  flex-direction: column;
+  margin-left: 10vw;
+  justify-content: center;
+}
+.left div span {
+  font-weight: bolder;
+  font-size: 18px;
+  letter-spacing: 5px;
+}
+.left button {
+  background: var(--dark-bg);
+  color: var(--dark-text-color);
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.left button:hover {
+  font-size: 20px;
+  background-color: green;
+  transition: all 2s;
+}
+.left .tag {
+  font-size: 2.2rem;
+}
+.right {
+  grid-area: right;
+  justify-content: end;
+  align-items: left;
+  margin-top: -9rem;
+}
+.right img {
+  height: 110%;
+}
+
+/* banner section  */
+.banner {
+  margin-top: 3rem;
+  border: 2px solid var(--dark-mode);
+  padding: 2rem;
+  justify-content: space-between;
+  box-shadow: var(--shadow);
+  border-radius: 50px;
+}
+
+.info-content .icon-container {
+  background: var(--orange-red);
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  font-size: 30px;
+}
+.info-divider {
+  background: var(--orange-red);
+  width: 4px;
+}
+.info-content div span {
+  font-weight: 600;
+  font-size: 1.2rem;
+  letter-spacing: 4px;
+}
+.icon-container:hover {
+  background: rgb(166, 250, 63);
+  transform: scale(1.4);
+}
+/* skills section css starting */
+.skills-container {
+  justify-content: space-between;
+}
+.skills-container > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.skills-container > div i {
+  font-size: 3.5rem;
+  cursor: pointer;
+}
+.skills-container > div:hover {
+  transition: all 0.6s;
+
+  transform: scale(1.8);
+}
+/* project section  */
+.projects {
+  margin-top: 4rem;
+}
+.projects .project-container {
+  grid-template-columns: repeat(2, 1fr);
+}
+.projects .project-card {
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  padding-bottom: 2rem;
+}
+.project-card .links {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+/* about me starting */
+.about {
+  margin-top: 2rem;
+  background: rgb(230, 202, 228);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+}
+.name h1 {
+  letter-spacing: 3px;
+  font-weight: 600;
+}
+.extra-cur p:hover {
+  background: var(--orange-red);
+  color: white;
+  border: 2px solid blue;
+  border-radius: 5px;
+  cursor: pointer;
+  transform: scale(2);
+}
+/* contact section starting */
+.social {
+  font-size: 4rem;
+  gap: 3rem;
+}
+.email-section {
+  border: 1px solid var(--border-color);
+  background: grey;
+  padding: 1rem;
+  border-radius: 5rem;
+  color: #ffffffec;
+  gap: 3rem;
+  width: 30rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: black;
+}
+.email-icon {
+  border: 1px solid black;
+  color: #000;
+  border-radius: 50%;
+  padding: 1.5rem;
+  font-size: 2.1rem;
+  background: var(--orange-red);
+}
+
+/* footer section starting */
+footer {
+  min-height: 30vh;
+  background: black;
+  color: white;
+  margin-top: 4rem;
+  flex-direction: column;
+}
+footer .top {
+  margin-bottom: 5rem;
+  gap: 5rem;
+}
+footer .top ul {
+  list-style: none;
+  padding-inline-start: 0;
+}
+footer .top ul li {
+  line-height: 1.5rem;
+}
+footer .top ul li:hover {
+  background: var(--orange-red);
+}
+
+/* Go up section  */
+.goUp {
+  font-size: 2.5rem;
+  background: var(--orange-red);
+  width: 4.3rem;
+  height: 4.3rem;
+  border-radius: 50%;
+  position: fixed;
+  right: 20px;
+  bottom: 60px;
+}
+#scroll {
+  display: none;
+}
+[for="scroll"] {
+  display: none;
+}
+
+/* media query starting */
+@media (max-width: 768px) {
+  [for="scroll"] {
+    cursor: pointer;
+    display: block;
+  }
+  .menu {
+    position: absolute;
+    background: var(--body-bg);
+    width: 250px;
+    height: 100vh;
+    top: 3.7rem;
+    box-shadow: var(--shadow);
+    left: 100vw;
+    transition: all 0.6s;
+  }
+  .menu .navigation {
+    flex-direction: column;
+    font-size: 1.3rem;
+  }
+  .menu .navigation li {
+    line-height: 2.5rem;
+  }
+  #scroll:checked + .menu {
+    left: calc(100vw - 250px);
+  }
+}
